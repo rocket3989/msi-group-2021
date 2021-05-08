@@ -420,7 +420,7 @@ function drawResults3(sel, scenarios, name, complete, incomplete){
     
     curr
     .append('text').translate([10, 0]).text('Record vs '+ against[1])
-        .at({textAnchor: 'middle', fontSize: 16,fill: '#555'})
+        .at({textAnchor: 'middle', fontSize: 14,fill: '#888'})
     
     curr.append('text').text('WW')
         .translate([-80, 20]).at({textAnchor: 'middle', fontSize: 14, fill: '#888'})
@@ -440,7 +440,7 @@ function drawResults3(sel, scenarios, name, complete, incomplete){
     curr = svg.append('g').at({transform:'translate(-40, 90) rotate (-90)'})
     
     
-    curr.append('text').text('Record vs '+against[0]).translate([15, 0]).at({textAnchor: 'middle', fontSize: 16,fill: '#555'})
+    curr.append('text').text('Record vs '+against[0]).translate([15, 0]).at({textAnchor: 'middle', fontSize: 14,fill: '#888'})
     
     curr.append('text').text('LL')
         .translate([-80, 20]).at({textAnchor: 'middle', fontSize: 14, fill: '#888'})
