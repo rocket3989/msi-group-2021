@@ -1,0 +1,81 @@
+
+[
+  {
+    "path": "0",
+    "text": "With a tie between PGG and UOL, the most important games are between them",
+    "team": "C9",
+    "lw": 21,
+    "textOffset": [
+      -117,
+      1008
+    ]
+  },
+  {
+    "path": "M -36,279 A 45.026 45.026 0 0 0 43,310",
+    "text": "Tap to see how the first match affects the group",
+    "team": "PNG",
+    "lw": 21,
+    "textOffset": [
+      -47,
+      244
+    ]
+  },
+  {
+    "path": "M 286,220 A 123.355 123.355 0 0 1 105,221",
+    "text": "MAD can lose all three games and still advance without a tiebreaker",
+    "team": "MAD",
+    "lw": 24,
+    "textOffset": [
+    241, 185
+    ]
+  },
+  {
+    "path": "M -2000 0",
+    "text": "Two loses eliminate MCX and TL",
+    "team": "TL",
+    "lw": 22,
+    "textOffset": [
+      -107,
+      190
+    ]
+  },
+
+  {
+    "path": "M 261,-69 A 62.889 62.889 0 0 1 182,3.999999523162842",
+    "text": "TSM needs to go 3-0  and win a tiebreaker to advance",
+    "team": "TSM",
+    "lw": 24,
+    "textOffset": [
+    166,
+    -100
+    ]
+  },
+  {
+    "path": "M -2000 0",
+    "text": "A three way tie for second leaves possibilities wide open for Group C",
+    "team": "DFM",
+    "lw": 24,
+    "textOffset": [
+    234,-137
+    ]
+  },
+  {
+    "path": "M 210,247 A 24.767 24.767 0 0 1 168,222",
+    "text": "There is only a single scenario in which TES is eliminated without a tiebreaker",
+    "team": "TES",
+    "lw": 24,
+    "textOffset": [
+    218, 198
+    ]
+  },
+  {
+    "path": "M 261,-64 A 62.002 62.002 0 0 1 182,4",
+    "text": "Even with three wins, IW can still be eliminated",
+    "team": "IW",
+    "lw": 24,
+    "textOffset": [
+    165,
+    -88
+    ]
+  }
+]
