@@ -4,7 +4,7 @@ var byGroup
 var colorChoice = 0
 var staticPick = false;
 var ƒ = d3.f
-// console.clear()
+
 function readFile(){
     d3.loadData('annotations.json', 'matches.tsv', function(err, res){
         d3.selectAll('.group-header').st({opacity: 1})
@@ -26,7 +26,6 @@ function readFile(){
             if (!teams2wins[d.t2]) teams2wins[d.t2] = 0
             if (d.date < "05-09") teams2wins[d.wName]++     //make sure to change key each year
         })
-        console.log(matches)
         byGroup = d3.nestBy(matches, ƒ('group'))
         reDraw();
     })
@@ -60,9 +59,6 @@ function scoreMatches(matches){
     })
     var nameToTeam = {}
     teams.forEach(function(d){ nameToTeam[d.name] = d })
-    // console.log(nameToTeam);
-    // console.log(teams)
-    // console.log(matches)
 
     matches.forEach(addMatchWins)
 
@@ -83,8 +79,6 @@ function scoreMatches(matches){
 
         // in 3-way tie, only head2head winning record gets out of tiebreaker
         if (d.length != 3) return
-        // console.log(d.length, d.map(d => d.w).join(' '))
-        // console.log(d.length, JSON.parse(JSON.stringify(d)))
         d.forEach(function(d){ d.w = d.w > 2 ? d.w : 0 })
     })
 
@@ -136,7 +130,6 @@ function drawGroup(gMatches){
     
     var complete = gMatches.filter(d => d.complete)
     var incomplete = gMatches.filter(function(d){ return !d.complete })
-    console.log(complete, incomplete)
 
     scenarios = d3.range(64).map(function(i){
         incomplete.forEach(function(d, j){
@@ -344,11 +337,9 @@ function drawResults(sel, scenarios, name, complete, incomplete){
 }
 
 function drawResults3(sel, scenarios, name, complete, incomplete){
-    console.log(name)
     scenarios.forEach(function(d){
         d.team = d.teams.filter(function(d){ return d.name == name })[0]
         d.wins = d.team.wins
-        console.log(name, d.team.name)
 
         d.playedIn = d.incomplete.filter(function(d){
         d.currentWon = name == d.wName
@@ -358,10 +349,6 @@ function drawResults3(sel, scenarios, name, complete, incomplete){
         d.record2 = d.recordStr[1] + d.recordStr[3]
         
     })
-    scenarios.forEach(function(d){
-        console.log(d.team.name)
-    })
-    console.log(scenarios)
 
     var against = []
     scenarios[0].playedIn.forEach(function(d){
@@ -395,10 +382,6 @@ function drawResults3(sel, scenarios, name, complete, incomplete){
         d.byRecord2.reverse()
     })
 
-    // var byRecordStr = d3.nestBy(scenarios, ƒ('recordStr'))
-    console.log(against)
-    // console.log(completeIn)
-    // console.log(byRecordStr)
     sel.st({marginTop: -30})
     if (name == 'RNG')
         sel.st({margin:'0px auto', display:'block', width:300, marginBottom:0, marginTop:90})
@@ -475,22 +458,6 @@ function drawResults3(sel, scenarios, name, complete, incomplete){
         .append('g')
         .at({transform:'rotate (-45)'})
     
-
-    recordSel.append('text')
-        .text(function(d){
-        var s
-        console.log(d.key)
-        if (d.key == '111') s = 'Win Next Three'
-        if (d.key == '000') s = 'Lose Next Three'
-        if (d.key == '001') s = against[2] 
-        if (d.key == '010') s = against[1] 
-        if (d.key == '100') s = against[0] 
-        if (d.key == '011') s = against[0] 
-        if (d.key == '101') s = against[1] 
-        if (d.key == '110') s = against[2] 
-        return s
-        })
-        .at({textAnchor: 'middle', x: 10*3.5, y: -10})
     
     recordSel.appendMany('circle.scenario', ƒ())
         .at({r: 5, fill: ƒ('team', color[colorChoice]), cx: function(d, i){return i*10} })
